@@ -13,10 +13,8 @@ dbConnection();
 // Configure CORS
 app.use(cors());
 
-// Routes
-app.get("/", (req, res) => {
-  res.json({ ok: true, message: "Hello World!" });
-});
+
+app.use("/api/users", require("./routes/users"));
 
 // Listen to the root endpoint
 app.listen(PORT, () => {
