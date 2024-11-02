@@ -27,3 +27,5 @@ const UserSchema = Schema({
         default: false,
     }
 });
+
+module.exports = model('User', UserSchema);
