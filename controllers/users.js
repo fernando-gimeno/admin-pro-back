@@ -57,10 +57,10 @@ const getUsers = async (req, res) => {
 };
 
 const getUser = async (req, res) => {
-  const { id } = req.params;
+  const { uid } = req.params;
 
   try {
-    const user = await User.findById(id, "name email role google");
+    const user = await User.findById(uid, "name email role google");
     if (!user) {
       return res.status(404).json({
         ok: false,
@@ -73,6 +73,7 @@ const getUser = async (req, res) => {
       user,
     });
   } catch (error) {
+    console.log(error);
     return res.status(500).json({
       ok: false,
       msg: "An error occurred. Please contact the administrator",
