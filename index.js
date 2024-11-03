@@ -13,8 +13,11 @@ dbConnection();
 // Configure CORS
 app.use(cors());
 
+// Parse the body of the request
+app.use(express.json());
 
 app.use("/api/users", require("./routes/users"));
+app.use("/api/login", require("./routes/auth"));
 
 // Listen to the root endpoint
 app.listen(PORT, () => {
