@@ -18,6 +18,8 @@ app.use(express.json());
 
 app.use("/api/users", require("./routes/users"));
 app.use("/api/login", require("./routes/auth"));
+app.use("/api/hospitals", require("./routes/hospitals"));
+app.use("/api/doctors", require("./routes/doctors"));
 
 // Listen to the root endpoint
 app.listen(PORT, () => {
